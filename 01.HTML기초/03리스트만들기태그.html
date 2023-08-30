@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리스트 만들기 태그</title>
+</head>
+<body>
+    <!-- 
+       [리스트 태그] 
+       ol(order-list) - 순서있는 리스트 
+       ul(unorder-list) - 순서없는 리스트
+       dl(difinition-list) - 정의리스트
+
+       리스트 밑에 각 아이템은 li태그를 사용하며, li는 생략할수도 있다!
+
+     -->
+
+     <h3>라면을 끓이는 순서</h3>
+     <hr>
+     <!-- 1. ol 예시 -->
+     <ol type="A">
+        <li>물을 끓인다.</li>
+        <li>라면과 스프를 넣는다.</li>
+        <li>파를 썰어 넣는다.</li>
+        <li>5분 후 먹는다.</li>
+     </ol>
+     <h3>내가 좋아하는 음식</h3>
+     <!-- hr은 선을 그어주는 태그 -->
+     <hr>
+     <!-- 2. ul 예시 및 ul,ol,li 중첩 사용 -->
+     <!-- li를 ol이나 ul 위에 사용하는 것도 가능! -->
+   <ul>
+    <li>내가 좋아하는 음식 많아요
+        <ul>
+            <li>치킨</li>
+            <li>피자</li>
+            <li>짜장</li>
+        </ul>
+    </li>
+    <li>라면 먹기 좋아해요</li>
+    <ol>
+        <li>물을 끓인다.</li>
+        <li>라면과 스프를 넣는다.</li>
+        <li>파를 썰어 넣는다.</li>
+        <li>5분 후 먹는다.</li>
+    </ol>
+    <li>여름에는 바다로</li>
+    <li>가을에는 산으로</li>
+   </ul>
+
+   <!-- 정의 리스트 만들기 -->
+   <!-- 
+        [ 정의리스트란? ]
+        - 용어,설명을 하나의 아이템으로 나열하는 리스트(dl>dt,dd)
+        - 정의리스트 전체는 dl(difinition list)을 사용하고 각 아이템에 용어는 dt(Definition Term), 설명은 dd(Definition Description) / 모두 블록요소 속성을 가지고 있음
+    -->
+
+    <h3>웹 브라우저의 종류</h3>
+    <hr>
+    <dl>
+        <dt><strong>Internet Explorer</strong></dt>
+        <dd>Mozilla 재단에서 오픈소스로 만든 것으로 W3C의 웹 표준을
+            선도
+        </dd>
+        <dt><strong>Chrome</strong></dt>
+        <dd>구글에서 만든 것으로 좋은 디버거를 갖추고 있어 디버깅에 많이 사용</dd>
+
+    </dl>
+            
+</body>
+</html>
