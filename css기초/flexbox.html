@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox 연습</title>
+    <style>
+        /* span{
+            background: red;
+        }
+        .span1{
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin: 20px;
+            position: absolute;
+        } */
+        body,html{
+            /* height: 100%; */
+        }
+        .container{
+            background: beige;
+            height: 100vh;
+            /* vh는 부모에 상관없이 아이템을 보이는 화면에 100% 높이값으로 보여지게 하겠다할때 쓰는 단위. */
+
+            /* height: 100%; */
+            /* 그냥 container 박스에만 높이값을 100%로 하면 보여지는 container 박스 크기만큼만 표시되어 
+            베이지 색 배경이 보이지않음.
+            container박스의 부모인 body 그리고 body 부모인 html에 높이값100%를 주고 
+            container에 높이값100%를 줘야 베이지색 배경이 보임 */
+            display: flex;
+            /* flex쓰면 박스가 자동적으로 왼쪽부터 오른쪽으로 옆으로 쭉 배치됨 */
+            flex-direction: row;
+            /* flex-direction: row;가 기본값임. 왼쪽부터 오른쪽 방향으로 박스 정렬 */
+            /* flex-direction: row-reverse; */
+            /* flex-direction: row-reverse;로 바꾸면 오른쪽에서 왼쪽 방향으로 박스 정렬 */
+            /* row의 중심축은 수평축!! */
+            /* flex-direction: column; */
+            /* 중심축은 수직축!!! */
+            /*  flex-direction: column; 위에서 아래 방향으로 정렬 */
+            /* flex-direction: column-reverse; */
+            /* flex-direction: column-reverse;로 바꾸면 아래에서부터 위 방향으로 정렬 */
+            flex-wrap: nowrap;
+            /* wrap이란 한줄에 가득차면 다음줄로 자동적으로 넘겨줄껀지 nowrap하여 그대로 둘건지 결정하는 것 */
+            /* flex-wrap: nowrap; 기본 설정값으로 부모요소 영역을 벗어나도 flex-item요소들을 한줄에 배치함 */
+            flex-wrap: wrap;
+            /* flex-wrap: wrap;은 요소들이 내부 로직에 의해 분할되어 여러행에 걸쳐 배치가 될 수 있도록 함.
+            nowrap속성과 마찬가지로 요소 배치가 시작되는 시작점은 flex-direction(플렉스방향:row,column 중)
+            에 의해 결정됨! */
+            /* flex-wrap: wrap-reverse; */
+            /* wrap속성과 동일하나 요소가 나열되는 시점과 끝점의 기준이 반대로 배치됨 */
+            /* flex-flow: column nowrap; */
+            /* flex-flow 속성은  flex-direction, flex-wrap을 같이 한꺼번에 쓸 수 있게 해주는 속성*/
+            /* css 속성값은 처음에 쓴 이후에 또 다른 속성값을 넣으면 이후에 쓴 다른 속성값을 우선 적용함 */
+
+
+            /* justify-content: flex-start; *//* 기본값으로 처음부터 왼쪽에서 오른쪽으로 정렬 */
+            /*  justify-content는 container 박스 안의 아이템들을 어떻게 배치할 것인가를 결정 */
+            /* justify-content: flex-end; */
+            /* 오른쪽 축을 기준으로 아이템 정렬,아이템 순서는 그대로 */
+            /* justify-content: center; */
+            /* 플렉스 박스 아이템들 가운데로 정렬 */
+            /* justify-content: space-around; */
+            /* 아이템들에 공간을 주어 균일하게 공간을 두고 배치되도록 해줌, 제일 왼쪽과 제일오른쪽 공간은 다른 아이템 박스들 빈 공간보다 폭이 좁음 */
+            /* justify-content: space-evenly; */
+            /* 아이템들에 똑같은 간격을 줌  */
+            justify-content: space-between;
+            /* 아이템의 가장 왼쪽과 오른쪽은 아이템은 양옆 끝에 붙여주고 나머지 아이템들을 균일한 간격으로 배치함 */
+            /* justify-content는 중심축을 기준으로 아이템들을 어떻게 배치할 것인지를 결정 */
+            /* align-items: center; */
+            /* 중심축이 row(수평),column(수직)인지에 따라 그 반대축 수평이면 수직축을 기준으로 또는 중심축이 수직이면 수평축을 기준으로 
+            아이템 배치를 어떻게 할 것인지를 결정 */
+            align-items: baseline;
+            /* 만약 아이템들 중 패딩을 줘서 크기가 달라진 경우 텍스트 위치를 그 달라진 위치에 따라 동일하게 배치하게 해줌 */
+            align-content: center;
+
+
+        }
+        .item{
+           width: 40px;
+           height: 40px;
+           border: 1px solid #222;
+        }
+        /* align-items:baseline 연습 패딩 */
+        .item1{
+            background: #ef9a9a;
+            /* padding: 20px; */
+        }
+        .item2{
+            background: #db1457;
+        }
+        .item3{
+            background: #f5a905;
+        }
+        .item4{
+            background: #f0c141;
+        }
+        .item5{
+            background: #fcf80a;
+        }
+        .item6{
+            background: #75ee05;
+        }
+        .item7{
+            background: #339605;
+        }
+        .item8{
+            background: #06eec7;
+        }
+        .item9{
+            background: #005ce6;
+        }
+        .item10{
+            background: #7e0259;
+        }
+    </style>
+</head>
+<body>
+    <!-- <span class="span1">1</span>
+    <span class="span2">2</span>
+    <span class="span3">3</span>
+    <span class="span4">4</span> -->
+    <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+        <div class="item item10">10</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+        <div class="item item10">10</div>
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+        <div class="item item10">10</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+        <div class="item item10">10</div>
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+        <div class="item item10">10</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+        <div class="item item10">10</div>
+    </div>
+    <!-- 에밋 -->
+    <!-- div.container>div.item.item${$}*10 -->
+    <!-- <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+        <div class="item item10">10</div>
+    </div> -->
+</body>
+</html>
