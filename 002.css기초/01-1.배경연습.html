@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>1.배경연습</title>
+        <style>
+            /* 초기화-기본셋팅 없앰 */
+            html,
+            body,
+            h1,
+            h2,
+            h3,
+            h4,
+            ul,
+            ol {
+                /* 바깥쪽 여백 없앰 */
+                margin: 0;
+                /* 안쪽 여백 없앰 */
+                padding: 0;
+            }
+            /* 기본적으로 css에서 div,h1,ol,ul 등의 블록요소들은 
+        셋팅시 가로는 화면끝까지 가로로 꽉 채워져서 생성됨(auto인 상태)/옆에 아무도 못옴
+        블록요소의 높이값은 내용만큼 늘어남! */
+
+            html,
+            body {
+                /* 보이는 화면을 다 채우고 싶으면 100%로 높이값을 줌 body에만 주면 
+            100% 늘어나지 않음 부모인 html까지 100% 높이 값을 같이 줘야 보이는 화면이 채워짐 */
+                height: 100%; /* h100p */
+                /* 
+                보이는 화면만큼 높이값을 줄때
+                100%의 의미는?
+                body는 html을 기준함!
+                html은 무엇을 기준하는가?
+                보이는 화면(window) 기준!!
+                ->그래서 보이는 화면만큼 확장됨
+            */
+            }
+            /* 타이틀 */
+            h1 {
+                padding: 50px;
+                text-align: center;
+            }
+            /* body 요소 안에 배경넣기 */
+            body {
+                /* html에 배경넣지 말자! 전체배경은 body에 ! */
+                /* 1. 배경색 bgc */
+                background-color: #f3c5e8;
+                /* 2. 배경이미지 bgi ->url(경로(./->현재위치기준))
+            ->기본적으로 반복됨 */
+                background-image: url(./imgs/bg_logo_a_01.png);
+                /* 3.배경반복여부 bgr */
+                /* repeat-x : x축 반복 */
+                /* background-repeat: repeat-x; */
+                /* repeat-x : y축 반복 */
+                /* background-repeat: repeat-y; */
+                /* repeat : 모든축 반복 */
+                /* background-repeat: repeat; (기본값) */
+                /* no-repeat : 모든축 반복 */
+                /* background-repeat: repeat; */
+                /* no-repeat(반복없음) */
+                background-repeat: no-repeat;
+                /* 4.화면 고정 bga
+            배경고정값은 fixed
+            고정의 의미는 스크롤시 보이는 화면기준으로 배경고정! */
+                background-attachment: fixed;
+
+                /* 5.배경위치 bgp
+                값: 가로 세로 
+                1. 가로방향: left,center,right
+                2. 세로방향: top, center, bottom
+                -수치값: px, %, em 등 여러단위 사용가능
+
+                ->방향별 개별 속성은?
+                background-position-x: 값;
+                background-position-y: 값;
+
+            
+            */
+                background-position: right bottom;
+
+                /* 6. 배경이미지 크기 bgz : 가로 세로
+                정해진 값:
+                1)contain : 이미지가 화면 채워지나 모두 보임(비율에 따라)
+                2)cover :이미지를 부모박스에 모두 채움(잘리는 부분있음-비율에 따라)
+                수치값:
+                가로 세로 중 하나만 주면 이미지가 비율유지를 함!
+
+                 */
+                /* background-size: contain; */
+                /* background-size: cover; */
+                /* background-size: 200px auto;가로는 200px 세로는 자동 */
+                /* background-size: 200px;가로 200px, 세로 auto로 생략 */
+                /* background-size: auto 200px; 가로 auto 세로 200px */
+                /* background-size: 400px 200px; */
+
+                /* 
+                    [ 배경 한꺼번에 쓰기]
+                    background: 배경색 이미지 반복 고정 위치/크기
+                    background: 색 이 반 고 윙/크
+                    예)
+                    background: #b8e4f8 url(./imgs/bg_mainvisual.jpg) no-repeat fixed center/cover;
+
+                    -> 주의사항!
+                    만약 배경 한번에 셋팅을 개별셋팅 아래에 놓으면 
+                    기존에 개별셋팅한 배경 설정이 모두 지워진다!
+                    따라서 개별 셋팅이 필요한 경우
+                    배경한번에 셋팅 아래쪽에 코딩해야 한다!
+
+            */
+            }
+            /* body 아래 .wrap 박스 */
+            .wrap {
+                height: 100%;
+                /* 높이값을 body에 채움 */
+
+                /* 배경 한번에 쓰기를 사용하면 여러개의 배경이미지를
+        넣을 수 있다!
+        css 형식
+        속성:값; 
+        -> 나중에 셋팅된 배경이 아래쪽에 위치함!
+        -> 위치값의 가로는 left, 세로는 center가 기본값이다! 
+        -> 위치나 크기의 특정값을 쓰지 않으면 기본값이 적용됨!
+        ->위치값을 0을 쓰면 기본값인 left center가 적용됨
+        ->위치값을 %로 쓰면 설정박스의 %위치를 중심으로 이미지가 배치됨! */
+                background: 
+                /* 도깨비 이름 */ url(./imgs/d01.png) no-repeat 50% 60%/100px,
+                    /* 도깨비 */ url(./imgs/dc1.png) no-repeat center/400px,
+                    /* 지은탁 이름 */ url(./imgs/d02.png) no-repeat 94% 11%/150px,
+                    /* 지은탁 */ url(./imgs/dc2.png) no-repeat right top/auto 150px,
+                    /*  저승사자 이름 */ url(./imgs/d03.png) no-repeat 5% bottom/100px,
+                    /*  저승사자 */ url(./imgs/dc3.png) no-repeat left bottom/300px,
+                    /* 써니 이름 */ url(./imgs/d04.png) no-repeat 94% 55%/100px,
+                    /* 써니 */ url(./imgs/dc4.png) no-repeat right/300px,
+                    /* 포스터 */ url(./imgs/bg_mainvisual.jpg) no-repeat 0/50%,
+                    /* 배경꽃 */
+                    url(./imgs/eachBG.jpg) no-repeat 50% top/40% 100%;
+                    /* 이미지 반복없음 이미지위치는 보이는 화면의 50% 그리고 제일 위에서부터 위치
+                       /이미지 크기는 가로는 화면의 40% 그리고 세로는 화면의 100%로! */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- .wrap>h1 : 에밋약어 코딩 -->
+        <div class="wrap">
+            <h1>01. 배경넣기 연습</h1>
+        </div>
+    </body>
+</html>
