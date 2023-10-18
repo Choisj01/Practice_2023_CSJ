@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>function - javascript Basic</title>
+</head>
+
+<body>
+    <h1>함수</h1>
+    <pre>
+        (입력), 할일, 출력
+        입력되는 값 = 매개변수(parameter)
+        전달되는 값 = 인수(argument)
+    </pre>
+    <script>
+
+    </script>
+    <hr>
+    <h2>함수의 구조</h2>
+    <script>
+        //일반 함수
+        var sum;//전역 변수
+
+        var result = add(1838,392930);
+
+        function add(a,b){
+            let sum = a + b; //지역 변수
+            return sum;           
+        }
+        
+        document.write(result);
+    </script>
+    <hr>
+    <h3>익명함수</h3>
+    <script>
+        //익명함수       
+
+        var addNum = function(x,y){
+            var z = x+y;
+            return z;
+        }
+
+        document.write(addNum(10,20));
+
+    </script>
+    <h3>즉시 실행 함수</h3>
+    <script>
+        /*
+        (function(){
+            //즉시 실행
+        }());
+
+        (function(){
+            //즉시 실행
+        })();
+        */
+       var result = (function(a,b){
+            return a+b;
+       })(10,20);
+       
+       document.write(result);
+    </script>
+</body>
+
+</html>
