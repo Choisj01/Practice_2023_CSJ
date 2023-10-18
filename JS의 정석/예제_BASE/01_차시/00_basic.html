@@ -9,14 +9,15 @@
 	<meta name="description" content="">
 	<meta name="author" content="user1">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0">
-	<script src="00_basic.js"></script>
+	<!-- Js 파일 별도로 불러와서 동적효과 관리! -->
+	<script src="00_basic.js" defer></script>
 
 </head>
 <!--
 	HTML 내용전달(구조언어)
 	CSS 모양(표현언어)
 	Javascript 동적(동적언어), 이벤트(클릭, 휠, 마우스, 스크롤...)
-	구분되어 관리
+	구분되어 관리 (웹표준 언어)
 
 	표현식 문장 expression statement
 	표현식 값을 만드어내는 것
@@ -24,19 +25,56 @@
 -->
 <body>
 	<h1>식별자</h1>
-	<pre>
 
+	<pre>
+		값을 저장, 이후 재활용
+		그 값은 ->문자, 배열(문자가 여러개), 함수,객체(문자나 변수를 한꺼번에 모은)일수도 있는데
+		이것들을 식별자라고 함 
 	</pre>
 	<h2>자바스크립 실행</h2>
 	<h3>태그에 script 작성</h3>
+
+	<h2>자바스크립트 실행</h2>
+	<h3>태그에 script 작성</h3>
+	<!-- <button onclick="alert('반갑습니다!')">클릭</button>  -->
+	<!-- 태그에 직접 자바스크립트 작성  -->
+
+	<script>
+		// 스크립트 태그 안에 직접 자바스크립트 작성
+		// alert('반갑습니다!');
+	</script>
 	<!-- <button onclick="alert('반갑습니다.');">클릭</button> -->
 	<script>
+		// 346, 1+44 , 'test'->표현식의 예
+		// 345; 10+45; 'test'; //문장예시
+		// var test = "test"; //문장예시
+		// alert("Hello World"); //문장예시 (알럿창 띄우기)
+
+		var beta = 'beta'; //선언 사용한 변수 -> beta(식별자임)
+		// 변수 선언은 숫자로 시작할 수 없음/숫자로 끝나는 것은 가능
+		// 식별자 - 숫자 시작 불가, 숫자로 끝나는 것은 가능 ,혹은 $ ,_ 사용 가능
+	var $beta = ' beta'; //식별자 가능
+	// var break = 'beta'; // 쓸 수 없음
+	// var var = 'beta';// 쓸 수 없음
+	// break 나 var 등의 예약어는 식별자로 사용할 수 없음
+	// 예약어의 예시( for , forEach , var , let, break, continue .....)
+	// 단독 사용 식별자 -alert(),output 등
+	// alert('hello world');
+	// output;
+
+	// 다른 식별자와 같이 쓰는 식별자
+    // Array.prototype //배열을 이용해 프로토타입을 만듦
+	// Math.round(대상) // 대상 숫자를 반올림해줌
+	// Math.ceil(대상) // 대상 숫자를 무조건 반올림해줌
+
+	
+
+
+
+
 
 	</script>
-
-	<script>
-
-	</script>
+	
 </body>
 
 </html>

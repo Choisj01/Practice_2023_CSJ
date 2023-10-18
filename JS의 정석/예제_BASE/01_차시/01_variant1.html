@@ -13,22 +13,56 @@
 
 <body>
     <h1>변수</h1>
+    값을 담는 그릇!
     <pre>
+        변수 선언 종류(3가지)
         var 변수명 = 값; 선언하면서 값을 초기화(할당), 어디에서든 사용가능, 함수내에서 지역변수, 호이스팅(끌어올려짐)
-        let 변수명 = 값; 블록범위 지역변수 
+        let 변수명 = 값; 블록범위 지역변수   {}-블록범위
         값을 지정후 변경가능
+        -> 위의 두개의 선언 변수는 값을 지정 후 변경 가능
 
-        const 변수명 = 값; const 상수, 변경 불가
+        const 변수명 = 값; const 상수, 값 변경 불가
     </pre>
     <script>
-       
+        // 변수란?
+        // 어떤 값을 담는 그릇!(값들을 저장해놓고 재사용하는 용도)
+        // 예) var test = '값'; 
+        // 선언 키워드 
+        // (var- 선언과 동시에 값을 초기화,let-블록범위의 지역변수를 선언하고 동시에 값 초기화,const-블록범위의 상수를 선언, 한번잡은 변수를 바꿀 수 없음)
+
+        var basicLang = '자바스크립트'; //변수 선언 후 값 담기
+        document.write(basicLang); //브라우저에 호출
     </script>
     <h2>변수 타입</h2>
     <pre>
-        
+        기본타입 : 숫자, 문자, 불리언(true/false), null(빈값) , undefined 등의 원시데이터로 단순화 할 수 없는 값
+        참조타입: 복합적인 값 (예- 배열, 함수 , 정규 표현식들)
+
+
+
+
     </pre>
     <script>
+       var mynum = 60;
+       var string = '자바스크립트';
+       var bool = true;
+       var n = null; //빈값
+       var u; //변수명은 있으나 값을 지정하지 않음. undefined
+    console.log(mynum);// 60이 나옴
+    console.log(string);// 자바스크립라고 문자가 나옴
+    console.log(bool,n,u); // true, null, undefined라고 나옴
 
+    // 변수에 담는 값들의 종류 확인 콘솔찍음
+
+    // 변수 타입 확인
+    // 자료형 typeof(대상);
+
+    console.log(typeof(mynum)); // 변수 타입확인 숫자(number)
+    console.log(typeof(bool)); // 변수 타입확인 boolean(불리안)
+    
+
+
+    
     </script>
 </body>
 
