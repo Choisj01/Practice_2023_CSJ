@@ -1,36 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>function - javascript Basic</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>function - javascript Basic</title>
-</head>
-
-<body>
-    <h1>함수</h1>
-    <pre>
+    <body>
+        <h1>함수</h1>
+        <pre>
         (입력), 할일, 출력
         입력되는 값 = 매개변수(parameter)
         전달되는 값 = 인수(argument)
-    </pre>
-    <script>
+    </pre
+        >
+        <script></script>
+        <hr />
+        <h2>함수의 구조</h2>
+        <script>
+            var sum; //전역변수 지정하고 값을 할당하진 않음
 
-    </script>
-    <hr>
-    <h2>함수의 구조</h2>
-    <script>
- 
-    </script>
-    <hr>
-    <h3>익명함수</h3>
-    <script>
+            var result = add(100, 30); 
+            //기본적으로 스크립트는 위에서 아래로 순차적으로 읽는다!다만, 
+            //일반함수에서는 인수 할당값을 함수순서보다 위에 올려도 알아서 함수안의 내용을 읽고서 리턴해주며 값을 읽어준다!
+            // (에러가 나지않음,어디에 기술되어있던지 재사용 가능한 점이 일반함수 특징!)
 
-    </script>
-    <h3>즉시 실행 함수</h3>
-    <script>
+            // 일반함수 예시 - 매개 변수에 값을 2개 넣어 일을 시켜줌
+            function add(a, b) {
+                // a,b- 매개변수 (임의로 매개변수명을 써 놓고 지역변수를 만들어 할당!)
+                // var sum = a + b; //sum 변수에 a+b 라는 값을 할당! 지역변수
+                sum = a + b;
+                //sum변수는 함수 안에 쓰인 지역변수임! 전역변수로 변수를 선언하고 함수안에서 변수에 값을 할당하면 결과값이 리턴됨(그때 변수 선언문인 var,let,const는 쓰지 않음)
+                // return sum; // sum이라는 변수를에 되돌려줘라!(결과를 알려줘라) , 주석을 달면 undifined로 나옴(다 만들고 나서 리턴을 안해줫기 때문이다!)
+            } ////////add함수///////
 
-    </script>
-</body>
+            // document.write(add(100,30)); //브라우저에 찍어줘! add함수의 sum 변수 결과를! -> 브라우저 상 130이 나옴!(a-100,b-30)
+            //값을 직접 구하지 않고 인수에 값을 바꿔넣어 브라우저에 찍어줌!
+            //(함수에 일을 시킬때 전달되는 값(100,30)= 인수(argument) 라고 함!)
+            // document.write(result); // 결과는 130 동일하게 나옴! document.write() - 브라우저 출력 메서드
+            document.write(sum); //현재 sum이 지역변수라 정의가 안됐다고 오류가 뜸
+        </script>
+        <hr />
+        <h3>익명함수</h3>
+        <script>
+            // 익명함수 예시
+            
+            var addNum = function (x, y) {
+                var z = x + y;
+                return z;
+            };
+            document.write(addNum(10,20)); // 익명함수에서는 순서대로 읽어 출력되기 때문에 
+            // 반드시 익명함수가 무슨일을 하는지 기술 후 뒤에 뒤에 결과가 나오도록 해야 구현됨!! 
+            // 익명함수보다 위에 있으면 출력안됨!(일반함수와 차이점)
 
+        </script>
+        <h3>즉시 실행 함수</h3>
+        <script>
+            // // 즉시 실행함수 구조
+            // (function(){
+            //     // 이안에 쓰면 즉시실행!
+            // }());
+            // (function(){
+            //     // 이안에 쓰면 즉시실행
+            // })();
+         var result = (function(a,b){ //a,b - 매개변수 
+            return a + b; 
+         })(20,30); // 함수에 일을 시킴
+
+         document.write(result); // 결과값 50이 출력됨
+
+        </script>
+    </body>
 </html>

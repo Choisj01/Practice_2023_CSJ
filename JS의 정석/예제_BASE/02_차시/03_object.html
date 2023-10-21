@@ -13,6 +13,34 @@
         객체(object) = 변수(property) + 함수(method)
     </pre>
     <script>
+        // 빈 객체 만드는 형식 
+        // let 이름 = new Object();
+        // let 이름 = {};
+
+        // let s1 = {}; //빈객체
+        // // 빈객체에 값을 추가하는 법
+        // // 객체명.property명(변수명)=값;
+        // s1.kor = 100;
+        // s1.eng = 90;
+        // s1.math = 80;
+        // console.log(s1); // s1 객체 확인
+        // console.log(s1.math); // s1.math 객체 변수 값 확인
+        // 빈 객체를 만들고 이후에 값을 추가하는 방법
+
+
+        // 객체를 만듦과 동시에 값을 할당하는 방법
+        var s1 = {
+            kor:100, //프로퍼티:값
+            eng:90,
+            math:80,
+            total:function(){
+                var sum = this.kor + this.eng + this.math;
+                return sum;
+            } //함수성격의 프로퍼티 . 프로퍼티: 함수 
+        }
+        console.log(s1.math); /// 80이 나옴
+        console.log(s1.total()); /// 270이 나옴 total프로퍼티는 함수성격의 값을 가지고 있어 값을 출력하려면 ()를 써서 불러줘야 값이 불러짐.
+        // ()를 프로퍼티 뒤에 안붙이면 쓰여진 함수 내용 자체가 출력되고 값이 나오지 않음
 
     </script>
 </body>
