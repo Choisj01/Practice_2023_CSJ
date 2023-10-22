@@ -10,17 +10,38 @@
 <body>
     <h1>Loop</h1>
     <script>
+        var i = 0;
 
+        document.write(i + '<br>');
+
+        // i = i + 2;
+        i += 2; //이렇게 줄여서 쓸수도 있음/ 복합대입연산자 사용(+=)
+        document.write(i + '<br>'); // 2
+        i += 2; //이렇게 줄여서 쓸수도 있음/ 복합대입연산자 사용(+=)
+        document.write(i + '<br>'); //4
+        i += 2; //이렇게 줄여서 쓸수도 있음/ 복합대입연산자 사용(+=)
+        document.write(i + '<br>'); //6
+        i += 2; //이렇게 줄여서 쓸수도 있음/ 복합대입연산자 사용(+=)
+        document.write(i + '<br>'); //8
+        i += 2; //이렇게 줄여서 쓸수도 있음/ 복합대입연산자 사용(+=)
+        document.write(i + '<br>'); //8
+
+        //비효율적임
     </script>
     <hr>
     <h2>for 반복문</h2>
+    반복문은 자바스크립트에서 html요소들을 선택할때 배열이나 유사배열로 들어오는데 이때 그 요소들을 가지고 다양한 효과를 줄때 반복문을 주로 사용함!
     <pre>
-        for(초기문;조건문;증감){
-            반복할 코드
+        *가장 많이 쓰는 반복문
+
+        for(초기문(순서1);조건문(순서2);증감(순서4)){
+            반복할 코드(순서3)
         }
     </pre>
     <script>
-
+        for(i=0;i<=10;i+=2){ //초기 - 0부터  시작 -> i가 10보다 작거나 같을때까지->2씩더해라 / 조건문이 맞으면 실행하면서 계속 반복
+            document.write(i + '<br>'); // 10 출력 
+        }
     </script>
 
     <h2>while 반복문</h2>
@@ -32,9 +53,13 @@
         }
     </pre>
     <script>
-
+        var i = 0; //초기문
+        while(i<=10){ //조건문
+            document.write(i + '<br>'); //반복
+            i+=2; //증감
+        }
     </script>
-    <h2>do while 반복문</h2>
+    <h2>do while 반복문(일단 해! 반복문)</h2>
     <pre>
         초기문;
         do{
@@ -43,22 +68,66 @@
         }while(조건);
     </pre>
     <script>
-
+    var i = 0; //초기문
+        do{
+            document.write(i + '<br>'); //반복
+            i+=2; //증감
+        }while(i<=10); //조건
     </script>
-    <h2>forEach 반복문</h2>
-    <script>
 
+    <h2>forEach 반복문(배열의 원소에서만 사용가능)</h2>
+    <script>
+        let arr = ['a','b','c','d','e'];
+
+        arr.forEach(function(item,index,all){ //3개의 매개변수로 item은 배열 하나하나를 말하고, index는 배열요소 하나하나의 순번을 말하고 all은 전체배열을 말하는 파라미터(매개변수)
+            document.write(item + '는 전체배열' +all+ '에서'+index+'번째이다'+'<br>');
+        }); /////forEach/////////
+
+        // forEach 출력내용
+        // a는 전체배열a,b,c,d,e에서0번째이다
+        // b는 전체배열a,b,c,d,e에서1번째이다
+        // c는 전체배열a,b,c,d,e에서2번째이다
+        // d는 전체배열a,b,c,d,e에서3번째이다
+        // e는 전체배열a,b,c,d,e에서4번째이다
     </script>
     <h2>for in 반복문</h2>
     <pre>
         객체의 값들 반복
     </pre>
     <script>
+        var student = {
+            kor:100, //객체안의 프로퍼티:값,프로퍼티:값,...
+            eng:90,
+            math:80
+        }; //객체 생성 
+
+        for(item in student){ //student 변수의 객체 하나하나를 item이라고 하고 받아온다는 얘기
+            document.write(item+'/');
+        }
+         // 출력 내용
+        // kor/eng/math/
+
+        for(item in student){ //student 변수의 객체 하나하나를 item이라고 하고 받아온다는 얘기
+            document.write(item+':'+student[item]+'/');
+        }
+        
+        // 출력내용
+        // kor:100/eng:90/math:80/
+       
+
 
     </script>
     <h2>for of 반복문</h2>
+    값이 나열되어있는 것에서 반복문을 이용해 출력하는 반복문(배열 안의 인덱스번호를 활용할 수 없음)
+    <br>
     <script>
+        let arr1 = ['a','b','c','d','e'];
 
+        for(letter of arr1){ //letter - 배열 하나하나를 대변하는 것
+            document.write(letter+'/');
+        }
+        // 출력내용
+        // a/b/c/d/e/
     </script>
 
 </body>
