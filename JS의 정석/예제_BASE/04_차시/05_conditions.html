@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>conditions</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>conditions</title>
-</head>
-
-<body>
-    <h1>조건문</h1>
-    <pre>
+    <body>
+        <h1>조건문</h1>
+        조건문은 굉장히 다양하게 활용가능함. 자바스크립트로 웹페이지의 요소를 선택하거나 효과를 적용할때 , 그 해당
+        이벤트에 기준을 넘어가는지 안넘어가는지 조건을 설정해 참과 참이 아닐때 다른 효과를 구현하기 위해 사용함!
+        <pre>
         if(조건){ 
             참일 때 할일;            
            } else {            
@@ -17,57 +18,197 @@
         }
         0 거짓 false
         1 참 true 
-    </pre>
-    <script>
+    </pre
+        >
+        <script>
+            // 변수 할당
+            var a = 10;
+            var b = 20;
 
-    </script>
-    <hr>
-    <h2>비교연산자</h2>
-    <pre>        
-    < 
-    >     
-    <=    
-    >=    
+            // if 문
+            // if(a<b){ //a가 b보다 작으면(조건)
+            //     document.write('a가 b보다 작다'); //브라우저에 해당 문구가 출력되도록 해라
+            // } /////if//////
+
+            if (0) {
+                // 0 - false / 1- true / 조건을 0으로 쓰면 거짓으로 화면에 출력안됨
+                document.write("a가 b보다 작다"); // 거짓으로 화면출력안됨!
+            } ////if//////////
+            if (1) {
+                //1-true
+                document.write("a가 b보다 작다"); // 참으로 화면에 출력됨!
+            } ///////////if/////
+
+            if (false) {
+                document.write("a가 b보다 작다"); // false 조건으로 화면출력안됨!
+            }
+            if (true) {
+                document.write("<hr/>", "a가 b보다 작다"); // true 조건으로 화면출력안됨!
+            }
+
+            // 조건()에 0,1 또는 true,false로 넣어도 조건으로 성립되어 실행됨
+
+            if (a > b) {
+                document.write("a가 b보다 크다"); //조건에 부합하지 않아 화면출력안됨
+            } ////if ///
+            else if (a == b) {
+                document.write("a와 b가 같다"); //조건 충족안되어 화면 출력안됨
+            } else if (a < b) {
+                document.write("a가 b보다 작다"); //10은 20보다 작아 조건 충족!
+            }
+        </script>
+        <hr />
+        <h2>비교연산자</h2>
+        <pre>
+        
+    < 작다
+    >  크다   
+    <=   작거나 같은
+    >=    크거나 같은
     != 같지 않다면   
     == 같다면
-    === 타입까지 같다면
-    !==  타입이 다르면
-    </pre>
-    <hr>
-    <h2>비교연산자 != </h2>
-    <script>
-       
-    </script>
-    <hr>
-    <h2>중첩 조건문</h2>
-    <script>
-       
-    </script>
-    <h2>조건문의 축약</h2>
-    <script>
-        
-    </script>
+    === 타입까지 같다면(값,타입 같음)
+    !==  타입이 다르면 (값은 같으나 타입은 다름)
+    </pre
+        >
+        <hr />
+        <h2>비교연산자 !=</h2>
+        <script>
+            var x = "10"; //string(문자열)
+            var y = 10; //number (숫자)
 
-    <h2>논리연산자</h2>
-    <pre>
+            if (x == y) {
+                // == (값이 같다)
+                document.write("x와 y는 같다"); // 조건에 맞아 화면출력!
+            }
+            if (x === y) {
+                // === (값도 같고 타입도 일치 조건)
+                document.write("x와 y는 값도 같고 타입도 일치한다"); // 조건에 맞지 않음. 타입이 문자형과 숫자형
+            }
+
+            if (x == y) {
+                // == (값이 같음)
+                if (x === y) {
+                    // ===(값,타입까지 같은지)
+                    document.write("x와 y는 값이 같고 타입도 일치한다"); // 출력실행됨
+                } else {
+                    document.write("값은 같으나 타입은 일치하지 않는다"); //일치하지 않아 출력실행안됨
+                }
+            } // 중첩 조건문문
+
+            console.log(typeof x, typeof y); // x는 문자형, y는 숫자형
+        </script>
+        <hr />
+
+        <h2>중첩 조건문</h2>
+        <script>
+            // 변수 할당
+            var a = 10;
+            var b = 20;
+
+            // 중첩 조건문 예시
+            if(a != b){ // a와 b가 다르냐
+                if(a>b){ 
+                    document.write('a가 b보다 크다');
+                }
+                else{
+                    document.write('a가 b보다 작다'); // 조건이 참으로 화면에 출력됨
+                }
+            }
+            else{ // a와 b는 같다
+                document.write('a는 b와 같다');
+            }
+        </script>
+        <h2>조건문의 축약</h2>
+        <script>
+              // 변수 할당
+              var a = 10;
+            var b = 20;
+
+            // 조건문 축약 예시
+            //  기존 if 문
+                // if(a>b){ 
+                //     document.write('a가 b보다 크다');
+                // }
+                // else{
+                //     document.write('a가 b보다 작다'); // 조건이 참으로 화면에 출력됨
+                // }
+
+                //조건문 축약 (중괄호 생략)
+            // if(a>b)
+            //         document.write('a가 b보다 크다');
+                
+            //     else
+            //         document.write('a가 b보다 작다'); // 조건이 참으로 화면에 출력됨
+
+            (a>b)? //a가 b보다 크냐?
+            document.write('a가 b보다 크다'): //콜론을 이용해 콜론앞에 있는 것이 참 뒤가 거짓일때 조건에 맞게 출력해라!
+            document.write('a가 b보다 작다');
+
+                
+
+        </script>
+
+        <h2>논리연산자</h2>
+        <pre>
         
        A && B  모두 참이면 참 반환
        A || B  하나라도 참이면 참 반환
 
     </pre>
-    <script>
-      
-    </script>
+        <script>
+            var a = 10;
+            var b = 20;
+            var c = 30;
 
-<h2>switch</h2>
-<pre>
+            // if(a<b && b<c){ 
+            //     document.write('a가 b보다 작고 , b는 c보다 작다');
+            // }
+            if(a<b && b>c){  // b가 c보다 크면으로 조건을 바꾸면 화면 출력되지 않음
+                document.write('a가 b보다 작고 , b는 c보다 크다');
+            }
 
+            if(a<b||b>c){ // || - 하나의 조건만 부합하면 됨
+                document.write('a가 b보다 작거나,b는 c보다 작다');
+            }
+        </script>
+
+        <h2>switch</h2>
+        <pre>
+    조건의 매칭되는 케이스가 있다면 해당 블록의 코드를 실행.(해당 케이스에 맞는 코드 실행)
+
+    switch(조건){
+        case a:
+         조건의 결과가 a일때 할일;
+         break;
+        case b: 
+        조건의 결과가 b일때 할일;
+        break;
+    }
+
+    //a 의 조건에 부합하면 결과가 실행되고 그 이후에는 조건 해당없으면 브레이크!
+    그런뒤에 다시 b조건에 부합하면 결과 실행되고 이후에 b조건에 해당없으면 다시 브레이크!
+    조건의 값에 따라 결과를 다양하게 구현할 수 있음
    
-</pre>
-<script>
+</pre
+        >
+        <script>
+            // var number = 8;
+            // 사용자가 값을 입력하면 해당하는 값이 조건에 부합하는지 알려줌
+            var number = prompt('숫자를 입력해주세요',);
 
-</script>
 
-</body>
-
+            switch(number%2){ // 변수를 2로 나눌때
+                case 0: // 0인 케이스면
+                    alert('짝수'); //알럿창에 짝수라고 떠라
+                break;    // 0 해당 조건 끝
+                case 1: //1인 케이스면
+                    alert('홀수'); //알럿에 홀수로 떠라
+                break;  
+                default: //2로 나눈 값이 1도 0도 아닌 케이스
+                    alert('숫자가 아니다');
+                break;         
+            } // 스위치문 종료///
+        </script>
+    </body>
 </html>
