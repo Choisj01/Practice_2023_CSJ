@@ -10,16 +10,35 @@
 <body>
     <h1>Timer</h1>
     <h2>setTimeout</h2>
+    시간을 가지고 일을 시키는 함수(지정 시간)
+    <h5>setTimeout(일회성 타이머 설정)</h5>
+    <h5></h5>
+    <h5></h5>
     <script>
         //시간, 소진되면 할일
         //setTimeout(할일,시간)
+        var greeting = setTimeout(function(){
+            alert('반갑습니다!');
+        },4000);
+        // 페이지 실행되고 4초 후 반갑습니다라고 알럿이 뜨게 함(일회성)
+
+        //clearTimeout(대상이름); - 타임아웃 멈춤
+        clearTimeout(greeting); // setTimeout()을 멈춤!
+
 
 
     </script>   
 
     <h2>setInterval</h2>
+    일정시간이 지나면 반복적으로 일을 반복
     <script>
-   
+         //setInterval(할일,시간)
+         var greeting2 = setInterval(function(){
+            alert('반갑습니다!');
+        },4000);
+
+        // clearInterval(대상이름);
+        clearInterval(greeting2); // 일 반복 멈춤!
 
     </script>
 </body>
