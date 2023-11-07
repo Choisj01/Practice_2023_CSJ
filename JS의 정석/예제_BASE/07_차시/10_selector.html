@@ -61,6 +61,56 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id, corporis, blanditiis quam dicta amet quidem eum impedit harum consequuntur aspernatur ratione nostrum vel culpa fuga! Dolore quibusdam nisi temporibus!
     </p>
     <script>
+        console.log(document);
+        // 태그이름
+        // document.getElementByTagName('태그명'), 유사배열로 들어옴!(콘솔에서 확인가능 - HTMLCollection)
+        // 대상.style.css속성명 = 값
+       var title = document.getElementsByTagName('h1');
+        console.log(title); // h1태그가 유사배열이기 때문에 css 입력시 배열번호를 넣어줘야 입력한 css 내용이 적용된다!
+        title[0].style.color='red';
+
+        // 아이디명으로 선택하는 법(단일요소로 선택됨)
+        // document.getElementById('아이디명');
+        var subTT = document.getElementById('sub_title');
+        console.log(subTT);
+        subTT.style.color='red';
+
+        // 클래스명 선택자
+        // document.getElementsByClassName('클래스명'); , 유사배열([]) 선택자
+        var list = document.getElementsByClassName('list');
+        console.log(list);
+        list[1].style.color='yellow';
+
+        // css 선택자
+        // document.querySelector('css선택자'); , 단일요소 css 선택자
+        // document.querySelectorAll('css선택자'); 유사배열 css 선택자 ([인덱스번호 필요])
+        // 대상{text-decoration:underline;} ->textDecoration 자바스크릡트화함
+        var myList = document.querySelector('#list3 .red');
+        var myList2 = document.querySelectorAll('#list3 .red');
+        console.log(myList,myList2);
+        myList.style.color='red'; // 단일요소 style css 주기
+        myList2[0].style.textDecoration ='underline';
+
+        // #box>div>div
+        const myBox = document.querySelector('#box>div>div');
+        myBox.style.color='blue';
+
+        const myP = document.getElementsByTagName('p');
+        console.log(myP);
+
+        // myP[0].style.color='green';
+        // myP[1].style.color='blue';
+        // myP[2].style.color='red';
+        // 이렇게 쓰지 않고 for문으로 쓰는 법도 있음! 여러번 반복하는 것은 비효율적이다!
+
+        // for(let i=0;i<3;i++){
+        for(let i=0;i<myP.length;i++){
+            myP[i].style.color='blue';
+
+        }
+
+
+
 
 
     </script>
