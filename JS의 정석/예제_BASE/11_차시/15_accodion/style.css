@@ -35,3 +35,9 @@ html, body {
   padding: 5px;
   float: right;
 }
+.panel-body{
+  display: none;
+}
+.active .panel-body{
+  display: block;
+}
