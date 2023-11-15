@@ -1,59 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ES6</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ES6</title>
-</head>
+    <body>
+        <h1>ECMAScript 6</h1>
+        <h2>Template Literal</h2>
+        <script>
+            var str1 = "javascript";
+            var str2 = "기초";
+            var num1 = 10;
+            var num2 = 20;
 
-<body>
-    <h1>ECMAScript 6</h1>
-    <h2>Template Literal</h2>
-    <script>
+            // var msg = '여러분은 지금' + str1 + str2 + '를 학습하고 있습니다.'; ->이전 버전
+            // var msg = `여러분은 지금 ${str1+str2}를 학습하고 있습니다.`;
+            // `(백틱)으로 간결해짐
+            var msg = `여러분은 지금 ${num1 + num2}를 학습하고 있습니다.`;
 
-        
-    </script>
-    <h2>var vs. let</h2>
-    <script>
- 
-    </script>
+            document.write(msg);
+        </script>
+        <h2>var vs. let</h2>
+        <script>
+            // var a = 0;
+            // if(true){
+            //     var a = 2; // var로 선언한 a변수명 초기화
+            //     console.log(a);
+            // }
+            // console.log(a);
 
-    <h2>const</h2>
-    <script>
-        // let c = 100;
-        // c = 200;
-        // console.log(c);
-        const c = 100;
-        c = 200;
-    </script>
-    <hr>
-    <h2>const 변수 값의 수정</h2>
-    <script>
+            let a = 0;
+            if (true) {
+                let a = 2; // let으로 선언한 a변수명 초기화
+                console.log(a);
+                //let은 {} 블록스코프로 블록안에서만 영향을 줌,변수가 충돌하여 에러나는 것을 방지할 수 있음(let,var 둘다 가변변수인 것은 동일함!)
+            }
+            a = 1; //let은 가변변수 선언자
+            console.log(a);
+        </script>
 
-    </script>
-    <h2>const 변수 재할당</h2>
-    <script>
+        <h2>const</h2>
+        <script>
+            // let c = 100;
+            // c = 200;
+            // console.log(c);
+            const c = 100;
+            c = 200; //에러가 남. const는 불변변수라서 그럼! 이미 할당된 것이므로 바뀔 수 없다!(const 특성)
+        </script>
+        <hr />
+        <h2>const 변수 값의 수정</h2>
+        <script>
+            const student = {
+                eng: 99,
+                kor: 100,
+            }; /// stydent 객체//
+            student.eng = 100;
+            console.log(student.eng); // 값이 100으로 변경됨. 객체안의 변수의 값은 변경됨
 
-    </script>
-    <h2>Arrow function 화살표 함수</h2>
-    <script>
-    
-    </script>
-    <hr>
-    <script>
+            // const student = {
 
-    </script>
-    <h2>Spread Operator 전개 연산자</h2>
-    <script>
+            // }; // 이미 할당된 똑같은 변수객체명으로 다른 객체를 만들 수는 없음. 콘솔에서 에러 확인됨
 
-    </script>
-    <hr>
-    <script>
+            const backengs = ["asp", "php", "jsp"];
+            backengs.pop(); //pop()으로 마지막 배열 없앰
+            console.log(backengs); //jsp가 배열에서 사라짐!
+        </script>
+        <h2>const 변수 재할당</h2>
+        <script>
+            //불가불가
+            const student = {
+                math: 80,
+            };
+            //const는 재할당 불가함
+        </script>
+        <h2>Arrow function 화살표 함수</h2>
+        <script>
+            //기존 즉시실행 함수
+            // (function () {
 
-    </script>
+            // })();
 
-</body>
+            //예1)
+            // (function () {
+            //     console.log('즉시 실행 함수 실행됨');
+            // })();
 
+            // 예2)
+            (() => {
+                console.log('즉시 실행 함수 실행됨');
+            })();
+        </script>
+        <hr />
+        <script>
+            //1. 기존문법
+            // function add(a,b){
+            //     return a+b;
+            // }
+            // document.write(add(10,20))
+
+            // 화살표 함수를 변수에 할당
+            var add = (a,b) => {
+                return a+b;
+            }
+            document.write(add(10,20));
+            
+            var add = (a,b) => a+b;
+            document.write(add(10,20));//-> 더 간단한 버전
+
+
+            //2. 매개변수가 하나일때는 괄호 생략 가능
+         /*    function multiply(x){
+                return x*2;
+            }
+            document.write(multiply(5)); */
+
+            // var multiply = (x) => {return x*2};
+             
+            var multiply = x => {return x*2}; // 매개변수가 하나일 경우 간단하게 쓸 때 소괄호도 생략가능!
+            document.write(multiply(5));
+
+           //3.함수내에서 바로 리턴만 있을 떄 중괄호 생략 가능
+
+        </script>
+        <h2>Spread Operator 전개 연산자</h2>
+        <script>
+            var arr1 = ['one','two'];
+            var arr2 = ['three','four'];
+
+            // var combined = [arr1[0],arr1[1],arr2[0],arr2[1]];
+            // console.log(combined);
+            // 배열이 길어 비효율적임
+            var combined = [...arr1,...arr2]; // ...사용으로 더 간결해짐
+            console.log(combined);
+            </script>
+        <hr />
+        <script>
+            var obj1 = {one:1,two:2,other:0};
+            var obj2 = {three:3,four:4,other:-1};
+
+            /* var combinedObj = {
+                one:obj1.one,
+                two:obj1.two,
+                three:obj2.three,
+                four:obj2.four
+            } */
+            var combinedObj = {...obj1,...obj2};
+            console.log(combinedObj);
+            
+        </script>
+    </body>
 </html>
