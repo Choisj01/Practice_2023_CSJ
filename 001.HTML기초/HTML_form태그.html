@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML_form태그</title>
+</head>
+<body>
+    <!-- 
+        [ form 태그 ]
+        -HTML <form>요소는 사용자 입력을 위한 HTML 양식을 만드는 데 사용
+        =<form>는 텍스트 필드, 체크박스, 라디오 버튼, submit 버튼 등과 같은 다양한 유형의 입력 요소에 대한 컨테이너
+     -->
+     <form action="ok.php">
+        <!-- 액션 속성은 폼태그에 반드시 들어가야 하는 속성으로 폼이 어떤경로로 전송데이터를 연결할건지 php등 어떤 페이지를 전송할 확장자 경로(주소)를 써야함  -->
+        <input type="text" name="아이디" id="">아이디 
+        <!-- 타입 텍스트는 숫자,문자,특수기호를 쓸 수 있는 속성 -->
+        <br>
+        <input type="password" name="비밀번호" id="">비밀번호
+        <!-- 타입 패스워드는 비밀번호를 쓸 수 있는 속성값으로 문자 숫자 등이 가려지도록 입력됨! -->
+        <br>
+        <input type="submit" value="전송"> 
+        <!-- 타입 서브밋은 전송해줄 수 있는 속성값으로 value를 필수로 넣어야함 -->
+        <input type="email" name="이메일" id="">이메일
+        <!-- 이메일 타입은 @가 필수로 들어가야함 -->
+
+        <!-- input 태그도 인라인임 -->
+        <!-- br 태그 사용하면 줄바꿈해서 한줄씩으로 만들 수 있음 -->
+     </form>
+</body>
+</html>

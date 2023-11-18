@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-1.CSS 디스플레이 성향과 플롯으로 네비만들기</title>
+    <!-- 스타일CSS -->
+    <style>
+        /* 블록요소를 인라인처럼 옆으로 흐리게 정렬하려면?
+        float:left or right 속성임!
+        -> 왼쪽 정렬이나 오른쪽 정렬을 해주고 여기에 가로 세로 크기에 따라 영역이 영향을 받음 */
+
+        ul{
+            list-style: none;
+        }
+        li{
+            float: left;
+            width: 12.5%;
+            /* 크기 100%/8 등분해서 12.5%씩 크기를 가지도록 가로크기를 % 비율로 줌 */
+        }
+        a{
+            font-size: 15px;
+            color: #000;
+            /* a태그의 기본 밑줄 속성 없애기 */
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+<!-- 
+    기본 작성순서:
+    바디 태그 요소를 구성한 후에 css 입힐것!!
+ -->
+<body>
+    <nav>
+        <ul>
+            <li><a href="">그린소개</a></li>
+            <li><a href="">지점안내</a></li>
+            <li><a href="">교육과정</a></li>
+            <li><a href="">커뮤니티</a></li>
+            <li><a href="">포트폴리오</a></li>
+            <li><a href="">고객센터</a></li>
+            <li><a href="">취업센터</a></li>
+            <li><a href="">상담센터</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

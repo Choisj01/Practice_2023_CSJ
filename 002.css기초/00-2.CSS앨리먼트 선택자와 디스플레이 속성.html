@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>00-2.CSS앨리먼트 선택자와 디스플레이 속성</title>
+    <style>
+        nav{
+            width: 200px;
+            background-color: antiquewhite;
+        }
+        /* 부모요소(nav)에 200px을 주니 안쪽에 있는 자식요소들(ul>li)도 영향을 받아 크기가 같이 줄어듦. */
+        
+        #div200{
+            width: 200px;
+            height: 200px;
+            background-color: #ebebeb;
+        }
+        #div500{
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            
+        }
+        /* 블록요소(div등)들은 크기를 줄여 옆에 공간이 생겨도 마진이 있어 다른 요소가 빈공간에 올라올 수 없도록 함.->이것은 블록의 기본적인 성향임.+ 가로 세로 크기 ㅇ */
+        span{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            display: block;
+            /* _>>> 인라인 요소에 가로세로 크기를 입히려면 display라는 css 속성을 줘야함!  */
+        }
+        /* span,a등의 인라인요소로 가로세로크기가 지정되어도 속성값이 적용되지 않음. 단 이미지는 예외적으로 인라인 요소지만 가로세로 크기지정이 됨. 
+        */
+    </style>
+</head>
+<body>
+    <nav>
+        <ul id="navi">
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+            <li class="list3">메뉴4</li>
+        </ul>
+    </nav>
+    <div id="div200">200*200</div>
+    <div id="div500">500*500</div>
+    <span>
+        text1
+    </span>
+</body>
+</html>
