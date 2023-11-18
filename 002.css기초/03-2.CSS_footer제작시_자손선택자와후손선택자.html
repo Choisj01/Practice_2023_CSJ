@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>03-2.CSS_footer제작시_자손선택자와후손선택자</title>
+        <!-- 스타일CSS -->
+        <style>
+            /* 블록요소를 인라인처럼 옆으로 흐리게 정렬하려면?
+    float:left or right 속성임!
+    -> 왼쪽 정렬이나 오른쪽 정렬을 해주고 여기에 가로 세로 크기에 따라 영역이 영향을 받음 */
+
+            nav>ul { 
+                list-style: none;
+            }
+            nav li {
+                float: left;
+                width: 12.5%;
+                /* 크기 100%/8 등분해서 12.5%씩 크기를 가지도록 가로크기를 % 비율로 줌 */
+            }
+            a {
+                font-size: 15px;
+                color: #000;
+                /* a태그의 기본 밑줄 속성 없애기 */
+                text-decoration: none;
+            }
+            /* 
+                [ 후손요소와 자손요소 ]
+                nav는 li의 후손요소이고 ul은 li의 부모요소로 li가 ul의 자식요소임!
+                바로 밑에 소속되면 소속시킨 위에 태그는 부모요소,안에 소속된 태그는 자식요소이고
+                부모와 자식요소를 품고 있는 그 위에 태그는 자식요소(자손요소)의 후손요소 태그가 됨!
+                -css에서 자식요소 지정은 nav>ul>li 이런식으로 지정하거나 nav li 이런식으로 지정해서 속성과 값을 써줌!
+            */
+        </style>
+    </head>
+    <!-- 
+기본 작성순서:
+바디 태그 요소를 구성한 후에 css 입힐것!!
+-->
+    <body>
+        <nav>
+            <ul>
+                <li><a href="">그린소개</a></li>
+                <li><a href="">지점안내</a></li>
+                <li><a href="">교육과정</a></li>
+                <li><a href="">커뮤니티</a></li>
+                <li><a href="">포트폴리오</a></li>
+                <li><a href="">고객센터</a></li>
+                <li><a href="">취업센터</a></li>
+                <li><a href="">상담센터</a></li>
+            </ul>
+        </nav>
+
+        <footer>
+            <h2>&#40;주&#41;지아이티아카데미</h2>
+            <ul>
+                <li>페이스북</li>
+                <li>카페</li>
+                <li>블로그</li>
+                <li>네이버TV</li>
+                <li>유튜브</li>
+            </ul>
+            <ul>
+                <li>이용약관</li>
+                <li>개인정보정책</li>
+                <li>제휴제안</li>
+                <li>오류신고</li>
+                <li>사이트맵</li>
+                <li>e그린원격평생교육원</li>
+            </ul>
+            <p>
+                회사명 : &#40;주&#41;지아이티아카데미 | 사업자등록번호 : 214-86-26812 | 대표이사 : 김상곤 | 주소 서울특별시
+                서초구 서초대로 78길 5 대각빌딩 5층 TEL : 02-3481-1005 | 개인정보관리책임자 : 오종석 | E-mail :
+                js0412@greenart.co.kr
+            </p>
+        </footer>
+    </body>
+</html>
