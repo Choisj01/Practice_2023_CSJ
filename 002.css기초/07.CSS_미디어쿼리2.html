@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CSS_미디어커리기초2 </title>
+    <style>
+        body{
+            background-color: beige;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            /* 절대좌표 위치 처리 */
+            position: absolute;
+            top: 20px;
+            left: 10px;
+        }
+
+        /* min-width란? - 최소 설정하는 사이즈가 됐을때 이렇게 해줘!라고 지정하는것
+        (그 사이즈에 도달햇을경우에=최소 ~사이즈이상 되엇을 경우로 생각하면 됨!) 
+        min-width:700px이면 최소 700이상부터 이렇개 해줘! */
+        /* 미디어 쿼리 적용하려면 @media를 써줘야함 */
+        @media screen and (min-width:700px) {
+            body{background-color: aqua;}
+        }
+        /* max-width 는 최대 500까지 도달하게 되면 이렇게 해줘! -> 500이하가 되는 시점부터 이렇게 해줘 */
+        @media screen and (max-width:500px) {
+            body{
+                background-color: green;
+            }
+        }
+        @media screen and (min-width:501px) and (max-width: 700px) {
+            div{
+                display: none;
+            }
+        }
+        /* 미디어 쿼리는 css 작성 가장 하단에 위치해야함- 쓰는 순서가 중요! */
+    </style>
+</head>
+<body>
+    <div>
+        물체
+    </div>
+</body>
+</html>
