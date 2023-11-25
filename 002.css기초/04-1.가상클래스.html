@@ -96,14 +96,14 @@
                 text-decoration: overline;
                 
                 /* 글자데코 스타일 tdst */
-                text-decoration-style: solid;
+                text-decoration-style: wavy;
             }
 
             /* :visited 클릭후 (방문후) 상태 */
             h2 a:visited {
             /* 글자색 */
-            /* color: green; */
-            color: orange;
+            color: green;
+            /* color: orange; */
         }
 
             /* :active 클릭 왼쪽버튼을 누른상태 */
@@ -127,7 +127,7 @@
 
             /* :focus 요소를 클릭/탭하여 초점이 올때 */
             h2 a:focus {
-                outline: 10px dotted red;
+                outline: 10px dotted gray; 
 
                 /* 외곽선 : outline -> ol
             값: 두께 종류 색상 (boder와 유사)
@@ -192,6 +192,7 @@
             font : 스두크/줄체
             ->>> font 한번에 쓰기에서 글자체는 필수!
             ->>> 2개이상 셋팅필수
+            -> 주의 한번에 font 셋팅시 초기화되어 font에 셋팅한 내용으로 전부 바뀔 수 있어서 사용시 주의 필요함!
         */
         /* 모든 li에 오버서 손가락모양 */
         .part1 li{
@@ -204,13 +205,16 @@
             /* 글자크기 40px 
             글자체 "궁서"
             글자색 red */
-            font-size: 40px;
-            font-family: '궁서';
+            /* font-size: 40px;
+            font-family: '궁서'; */
             color: red;
+            font: 40px '궁서';
         }
             
             /* 오버시 글자크기 50px 
             글자색 blueviolet */
+            /* 자식요소에 마우스 오버시 순서 중요!! 부모요소 밑에 첫번째 자시요소에 마우스 오버를 해라!
+            형식:  .부모요소 클래스::first-child:hover */
             .part1 li:first-child:hover{
                 font-size: 50px;
                 color: purple;               
@@ -246,8 +250,6 @@
             .part1 li:nth-child(3):hover{
                 font-style: normal;
             }
-
-            
 
             /* 4번째 li 
             font - 50px "궁서" 
@@ -294,7 +296,7 @@
                 color: darkgoldenrod;
             }
             .part1 li:nth-child(4)~li:hover{
-                font: 24px;
+                font-size: 28px;
                 color: blue;
             }
             
@@ -347,7 +349,7 @@
             글자체가 있어야 적용됨! */
             .part2 i:first-of-type{
                 font-weight: bold;
-                font-style: 20px;
+                font-size: 20px;
                 color: palevioletred;
 
             }
