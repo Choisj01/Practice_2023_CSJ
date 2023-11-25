@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>02. relative 포지션</title>
-    <style>
-        .bx{
-            width: 300px;
-            height: 300px;
-            border: 2px solid blue;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;/* fwb */
-            /* 글자세로중앙 */
-            line-height: 300px;
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <title>02. relative 포지션</title>
+        <style>
+            .bx {
+                width: 300px;
+                height: 300px;
+                border: 2px solid blue;
+                text-align: center;
+                font-size: 24px;
+                font-weight: bold; /* fwb */
+                /* 글자세로중앙 */
+                line-height: 300px;
+            }
 
-        /* 첫번째 박스에 포지션 체크 */
-        #r1{
-           position: relative; /* por */
+            /* 첫번째 박스에 포지션 체크 */
+            #r1 {
+                position: relative; /* por */
 
-           /* 위치이동값 */
-           top: 50px;
-           left: 50px;
+                /* 위치이동값 */
+                top: 253px;
+                left: 221px;
 
-           /********************************************* 
+                /********************************************* 
               [ 2. relative position ]
               -렐러티브! 라고 읽어주세요!
 
@@ -93,40 +93,36 @@
 
             ***********************************************/
 
-            z-index: 1;
-            /* 먼저 그렸지만 z-index가 1만 줘도 위로 올라감! */
+                z-index: 1;
+                /* 먼저 그렸지만 z-index가 1만 줘도 위로 올라감! */
 
-           background: url(./images/ab5.jpg) no-repeat center/cover;
-        }
+                background: url(./images/ab5.jpg) no-repeat center/cover;
+            }
 
-        /* 또 하나의 렐러티브 */
-        #r2{
-            position: relative;
-            bottom: 77px;
-            right: -124px;
+            /* 또 하나의 렐러티브 */
+            #r2 {
+                position: relative;
+                bottom: 77px;
+                right: -124px;
 
-            background: url(./images/ab4.jpg) no-repeat center/cover;
+                background: url(./images/ab4.jpg) no-repeat center/cover;
+            }
 
-        }
-         
+            #s1 {
+                background-color: lightcoral;
+            }
+            #s2 {
+                background-color: lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bx" id="r1">r1</div>
+        <div class="bx" id="s1">s1</div>
+        <div class="bx" id="r2">r2</div>
+        <div class="bx" id="s2">s2</div>
 
-
-        #s1{
-            background-color: lightcoral;
-        }
-        #s2{
-            background-color: lightblue;
-        }
-
-    </style>
-</head>
-<body>
-    <div class="bx" id="r1">r1</div>
-    <div class="bx" id="s1">s1</div>
-    <div class="bx" id="r2">r2</div>
-    <div class="bx" id="s2">s2</div>
-
-    <!-- 
+        <!-- 
         [ 젠코딩(에밋코딩) ]
 
         .bx#s$*3
@@ -142,7 +138,5 @@
         () : 요소 구분하기 
 
      -->
-    
-  
-</body>
+    </body>
 </html>
