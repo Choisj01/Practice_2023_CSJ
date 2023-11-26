@@ -77,7 +77,7 @@
                 ->>>>>>>>>>>> 앱솔루트 판타롱스타킹 
 
                 3. 원래 block이 아닌 요소를 앱솔루트를 줄 경우
-                자동으로 display:block으로 설정된다!
+                자동으로 display:block으로 설정된다!+ 내용 크기만큼만 크기를 가짐
                 이유는 자동크기를 설정할 경우 블록이 아니면
                 크기를 설정할 수 없기 때문이다!
                 -> 일반적으로 앱솔루트 포지션 요소는 블록이다!
@@ -123,14 +123,7 @@
     #a2{
         position: absolute;
         bottom: 0;
-        right: 0; 
-
-        /* 위치설정값과 같은 방향의 마진만 적용됨! */
-
-        margin-bottom: 50px;
-        margin-right: 50px;
-        /* margin-top: 50px;
-        margin-left: 50px; */
+        right: 0;
 
         /* 부모는 ? 보이는 화면 window */
         background: url(./images/ab1.jpg) no-repeat center/cover;
@@ -154,8 +147,8 @@
         /* 또 하나의 렐러티브 */
         #r2{
             position: relative;
-            bottom: 137px;
-            right: -237px;
+            bottom: 10px;
+            right: -70px;
 
             background: url(./images/ab4.jpg) no-repeat center/cover;
 
